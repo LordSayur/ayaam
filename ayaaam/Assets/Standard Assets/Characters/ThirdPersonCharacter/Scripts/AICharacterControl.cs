@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
@@ -12,8 +11,6 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         public ThirdPersonCharacter character { get; private set; } // the character we are controlling
         public Transform target;                                    // target to aim for
 
-        private bool isMoving = false;
-        [SerializeField] private int ranNum = 2;
 
         private void Start()
         {
@@ -28,34 +25,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
-            if (!isMoving)
-            {
-                StartCoroutine(MoveAyam());
-            }
+            if (target != null)
+                agent.SetDestination(target.position);
+
+            if (agent.remainingDistance > agent.stoppingDistance)
+                character.Move(agent.desiredVelocity, false, false);
+            else
+                character.Move(Vector3.zero, false, false);
         }
 
-        private void OnTriggerStay(Collider other) {
-            if (other.transform.tag == "Player")
-            {
-                if (target != null)
-                {
-                    agent.SetDestination(transform.position + (Vector3.Normalize(transform.position - target.position) * 5f));
-                    character.Move(agent.desiredVelocity, false, false);
-                }
-            }
-        }
 
         public void SetTarget(Transform target)
         {
             this.target = target;
-        }
-
-        IEnumerator MoveAyam(){
-            isMoving = true;
-            agent.SetDestination(transform.position + new Vector3(UnityEngine.Random.Range(-ranNum, ranNum), transform.position.y, UnityEngine.Random.Range(-ranNum, ranNum)));
-            character.Move(agent.desiredVelocity, false, false);
-            yield return new WaitForSeconds(3);
-            isMoving = false;
         }
     }
 }
