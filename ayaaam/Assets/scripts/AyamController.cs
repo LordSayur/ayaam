@@ -9,6 +9,7 @@ public class AyamController : MonoBehaviour
     // config variables
     [SerializeField] private int randomDirectionRange = 2;
     [SerializeField] private int moveSteps = 5;
+    [SerializeField] private float curvature = 1f;
 
     // reference variables
     private Transform target;
@@ -55,6 +56,8 @@ public class AyamController : MonoBehaviour
             }
             else
             {
+                // move *= Mathf.Sin(1f + Time.deltaTime);
+                // move += (transform.right * Mathf.Sin(curvature * Time.deltaTime));
                 MoveAyam(move);
             }
         }
@@ -86,6 +89,8 @@ public class AyamController : MonoBehaviour
 
     private void MoveAyam(Vector3 destinationLocation)
     {
+        Debug.DrawLine(transform.position, destinationLocation, Color.red);
+        Debug.DrawLine(transform.position, agent.desiredVelocity, Color.green);
         agent.SetDestination(destinationLocation);
         character.Move(agent.desiredVelocity, false, false);
     }
@@ -97,7 +102,7 @@ public class AyamController : MonoBehaviour
                                                             transform.position.y, 
                                                             Random.Range(-randomDirectionRange, randomDirectionRange));
         move = transform.position + (Vector3.Normalize(randomPosition - transform.position) * moveSteps);
-        yield return new WaitForSeconds(Random.Range(1,4));
+        yield return new WaitForSeconds(Random.Range(3,6));
         isAyamMoving = false;
     }
 
