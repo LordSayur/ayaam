@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomDirectionRange: 10
-  moveSteps: 3
-  target: {fileID: 6407854865767836940, guid: 67671ab6a9d12436587087cadce5f2b4, type: 3}
+  moveSteps: 7
+  curvature: 1
 --- !u!1 &7452886081286054113
 GameObject:
   m_ObjectHideFlags: 0
