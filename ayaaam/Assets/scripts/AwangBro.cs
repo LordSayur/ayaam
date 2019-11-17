@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Animator))]
@@ -7,6 +8,7 @@ public class AwangBro : MonoBehaviour
     [SerializeField] float m_MovingTurnSpeed = 360;
     [SerializeField] float m_StationaryTurnSpeed = 180;
     [SerializeField] float m_JumpPower = 12f;
+    [SerializeField] float m_JumpDuration = 1f;
     [Range(1f, 4f)][SerializeField] float m_GravityMultiplier = 2f;
     [SerializeField] float m_RunCycleLegOffset = 0.2f; //specific to the character in sample assets, will need to be modified to work with others
     [SerializeField] float m_MoveSpeedMultiplier = 1f;
@@ -26,6 +28,8 @@ public class AwangBro : MonoBehaviour
     CapsuleCollider m_Capsule;
     bool m_Crouching;
 
+    public bool canJump = true;
+
 
     void Start()
     {
@@ -37,6 +41,8 @@ public class AwangBro : MonoBehaviour
 
         m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         m_OrigGroundCheckDistance = m_GroundCheckDistance;
+
+        m_IsGrounded = true;
     }
 
 
@@ -48,7 +54,7 @@ public class AwangBro : MonoBehaviour
         // direction.
         if (move.magnitude > 1f) move.Normalize();
         move = transform.InverseTransformDirection(move);
-        CheckGroundStatus();
+        // CheckGroundStatus();
         move = Vector3.ProjectOnPlane(move, m_GroundNormal);
         m_TurnAmount = Mathf.Atan2(move.x, move.z);
         m_ForwardAmount = move.z;
@@ -65,8 +71,8 @@ public class AwangBro : MonoBehaviour
             HandleAirborneMovement();
         }
 
-        ScaleCapsuleForCrouching(crouch);
-        PreventStandingInLowHeadroom();
+        //ScaleCapsuleForCrouching(crouch);
+        //PreventStandingInLowHeadroom();
 
         // send input and other state parameters to the animator
         UpdateAnimator(move);
@@ -221,5 +227,20 @@ public class AwangBro : MonoBehaviour
             m_GroundNormal = Vector3.up;
             m_Animator.applyRootMotion = false;
         }
+    }
+
+    public void Jump()
+    {
+        StartCoroutine(StartJump());
+    }
+
+    IEnumerator StartJump()
+    {
+        m_IsGrounded = false;
+        canJump = false;
+        m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
+        yield return new WaitForSeconds(m_JumpDuration);
+        m_IsGrounded = true;
+        canJump = true;
     }
 }
