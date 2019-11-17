@@ -232,7 +232,7 @@ PrefabInstance:
     - target: {fileID: 8083812889298759437, guid: 06931ad36397cab4cb52660517fd71ee,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8083812889298759433, guid: 06931ad36397cab4cb52660517fd71ee,
         type: 3}
@@ -339,6 +339,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5844782658304884632, guid: 06931ad36397cab4cb52660517fd71ee,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 266625632}
+    - target: {fileID: 5844782658304884632, guid: 06931ad36397cab4cb52660517fd71ee,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMenuScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8083812888656659193, guid: 06931ad36397cab4cb52660517fd71ee,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -366,6 +376,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06931ad36397cab4cb52660517fd71ee, type: 3}
+--- !u!114 &213784711 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6966902689694472349, guid: 06931ad36397cab4cb52660517fd71ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 213784710}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &213784712 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 579051783, guid: 06931ad36397cab4cb52660517fd71ee,
+    type: 3}
+  m_PrefabInstance: {fileID: 213784710}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &251282852
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,8 +979,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1980248044, guid: 67671ab6a9d12436587087cadce5f2b4, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1689691839}
+    - target: {fileID: 1980248044, guid: 67671ab6a9d12436587087cadce5f2b4, type: 3}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 213784712}
+    - target: {fileID: 1980248044, guid: 67671ab6a9d12436587087cadce5f2b4, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 213784711}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67671ab6a9d12436587087cadce5f2b4, type: 3}
+--- !u!4 &1689691839 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6407854865767836940, guid: 67671ab6a9d12436587087cadce5f2b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1689691838}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1764921246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6573790389521155013, guid: 2e64bc69aa0e4054a92e791579b99762,
@@ -1256,14 +1308,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6573790389521155011, guid: 2e64bc69aa0e4054a92e791579b99762,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6573790389521155009, guid: 2e64bc69aa0e4054a92e791579b99762,
         type: 3}
       propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6573790389521155011, guid: 2e64bc69aa0e4054a92e791579b99762,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6573790389521155013, guid: 2e64bc69aa0e4054a92e791579b99762,
