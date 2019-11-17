@@ -17,7 +17,7 @@ public class AwangBroUserController : MonoBehaviour
     private bool m_Jump;
 
     // constant
-    enum PlayerNumber
+    public enum PlayerNumber
     {
         One = 0,
         Two,
@@ -52,15 +52,23 @@ public class AwangBroUserController : MonoBehaviour
             {
                 case PlayerNumber.One:
                     m_Jump = CrossPlatformInputManager.GetButtonDown("Jump1");
+                    if (CrossPlatformInputManager.GetButtonDown("Jump1") && m_Character.canJump)
+                    {
+                        m_Character.Jump();
+                    }
                     break;
                 case PlayerNumber.Two:
                     m_Jump = CrossPlatformInputManager.GetButtonDown("Jump2");
+                    if (CrossPlatformInputManager.GetButtonDown("Jump2") && m_Character.canJump)
+                    {
+                        m_Character.Jump();
+                    }
                     break;
                 default:
                     break;
             }
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        if (CrossPlatformInputManager.GetButtonDown("Dance"))
         {
             m_Character.Dance();
         }
