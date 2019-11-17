@@ -12,16 +12,23 @@ public class GrabberController : MonoBehaviour
     private void Start()
     {
         winText.enabled = false;
+#if MOBILE_INPUT
+        score.SetText("Ayam: " + scoreCount.ToString());
+#else
         score.SetText(player.name + ": " + scoreCount.ToString());
+#endif
         chickens = GameObject.FindGameObjectsWithTag("Chicken").Length;
-        Debug.Log(chickens);
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "Chicken") 
         {
             scoreCount++;
-            score.SetText(player.name + ": " + scoreCount.ToString());
+#if MOBILE_INPUT
+            score.SetText("Ayam: " + scoreCount.ToString());
+#else
+        score.SetText(player.name + ": " + scoreCount.ToString());
+#endif
 
             AyamController ayam = other.GetComponentInParent<AyamController>();
             ayam.DeactivateAyam();
@@ -29,8 +36,17 @@ public class GrabberController : MonoBehaviour
             
             other.transform.parent.SetParent(gameObject.transform);
             other.transform.parent.transform.localPosition = Vector3.zero;
+#if MOBILE_INPUT
+            if (scoreCount > chickens - 1)
+            {
+                winText.enabled = true;
+                winText.SetText("Abis Ayam!");
+                winText.color = Color.red;
 
-            if (scoreCount > 2)
+                player.GetComponent<AwangBro>().Dance();
+            }
+#else
+        if (scoreCount > 2)
             {
                 winText.enabled = true;
                 winText.SetText(player.name + " Manag!!!");
@@ -45,6 +61,7 @@ public class GrabberController : MonoBehaviour
 
                 player.GetComponent<AwangBro>().Dance();
             }
+#endif
         }
     }
 }
