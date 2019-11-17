@@ -8,22 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 88bc11bc2f5e4634c835313b1a87e0e0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Raya SP.unity
     guid: c0c44b0c16eb8014eaaa24dd0a8abf2c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Cartoon House SP.unity
     guid: 18ab5c562e426474eabc89b678b6f2d7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Suburbs SP.unity
     guid: 63792d9fdd6305b468d410cb3efb4030
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Raya MP.unity
     guid: 9ed442c172d826745922883be1e82cd8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Cartoon House MP.unity
     guid: d93a85c85b2de92439dd164e054afd69
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Suburbs MP.unity
     guid: 89856e4ce290d9a4b86686b99f5a5308
   m_configObjects: {}
