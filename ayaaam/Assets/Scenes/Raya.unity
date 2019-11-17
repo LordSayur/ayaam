@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 984241846}
-  m_IndirectSpecularColor: {r: 0.35283038, g: 0.5736328, b: 0.86866456, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -58,7 +58,7 @@ LightmapSettings:
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
-    m_AO: 0
+    m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
@@ -412,6 +412,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Awang Bro
       objectReference: {fileID: 0}
+    - target: {fileID: 6407854865768132906, guid: 67671ab6a9d12436587087cadce5f2b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6407854865767836940, guid: 67671ab6a9d12436587087cadce5f2b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -659,6 +664,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CCTV Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6118492718098280778, guid: 843fed67bc037ba4d8c7ce3b04163938,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4721152343161314685, guid: 843fed67bc037ba4d8c7ce3b04163938,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -753,6 +763,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Awang Bro (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6407854865768132906, guid: 67671ab6a9d12436587087cadce5f2b4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6407854865767836940, guid: 67671ab6a9d12436587087cadce5f2b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -808,7 +823,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6407854866445407135, guid: 67671ab6a9d12436587087cadce5f2b4,
+    - target: {fileID: 6610893248143322317, guid: 67671ab6a9d12436587087cadce5f2b4,
         type: 3}
       propertyPath: playerNumber
       value: 1
@@ -818,7 +833,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 8cf5a80da7570764e8bdb6d093c190a8, type: 2}
-    - target: {fileID: 6610893248143322317, guid: 67671ab6a9d12436587087cadce5f2b4,
+    - target: {fileID: 6407854866445407135, guid: 67671ab6a9d12436587087cadce5f2b4,
         type: 3}
       propertyPath: playerNumber
       value: 1
@@ -1699,7 +1714,7 @@ MeshCollider:
   m_GameObject: {fileID: 6521049910277295090}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -1713,7 +1728,7 @@ MeshCollider:
   m_GameObject: {fileID: 6521049910277295092}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -1783,7 +1798,7 @@ MeshCollider:
   m_GameObject: {fileID: 6521049910277295094}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -1811,7 +1826,7 @@ MeshCollider:
   m_GameObject: {fileID: 6521049910277294998}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
